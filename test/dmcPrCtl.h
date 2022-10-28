@@ -13,7 +13,7 @@
  *
  */
 
-// essentially the same as ceph's PrCtl.h, copied into the dmclock library
+// essentially the same as stone's PrCtl.h, copied into the dmclock library
 
 #ifdef HAVE_SYS_PRCTL_H
 #include <iostream>

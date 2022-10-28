@@ -47,7 +47,7 @@ static void dashes_to_underscores(const char *input, char *output) {
   *o++ = '\0';
 }
 
-static int va_ceph_argparse_witharg(std::vector<const char*> &args,
+static int va_stone_argparse_witharg(std::vector<const char*> &args,
 	std::vector<const char*>::iterator &i, std::string *ret,
 	std::ostream &oss, va_list ap) {
   const char *first = *i;
@@ -85,25 +85,25 @@ static int va_ceph_argparse_witharg(std::vector<const char*> &args,
   }
 }
 
-bool crimson::qos_simulation::ceph_argparse_witharg(std::vector<const char*> &args,
+bool crimson::qos_simulation::stone_argparse_witharg(std::vector<const char*> &args,
 	std::vector<const char*>::iterator &i, std::string *ret, ...) {
   int r;
   va_list ap;
   va_start(ap, ret);
-  r = va_ceph_argparse_witharg(args, i, ret, std::cerr, ap);
+  r = va_stone_argparse_witharg(args, i, ret, std::cerr, ap);
   va_end(ap);
   if (r < 0)
     _exit(1);
   return r != 0;
 }
 
-void crimson::qos_simulation::ceph_argparse_early_args(std::vector<const char*>& args, std::string *conf_file_list) {
+void crimson::qos_simulation::stone_argparse_early_args(std::vector<const char*>& args, std::string *conf_file_list) {
   std::string val;
 
   std::vector<const char *> orig_args = args;
 
   for (std::vector<const char*>::iterator i = args.begin(); i != args.end(); ) {
-    if (ceph_argparse_witharg(args, i, &val, "--conf", "-c", (char*)NULL)) {
+    if (stone_argparse_witharg(args, i, &val, "--conf", "-c", (char*)NULL)) {
       *conf_file_list = val;
     }
     else {

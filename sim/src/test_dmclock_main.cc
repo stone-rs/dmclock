@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
   }
 
   std::string conf_file_list;
-  sim::ceph_argparse_early_args(args, &conf_file_list);
+  sim::stone_argparse_early_args(args, &conf_file_list);
 
   sim::sim_config_t g_conf;
   std::vector<sim::cli_group_t> &cli_group = g_conf.cli_group;

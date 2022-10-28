@@ -149,9 +149,9 @@ namespace crimson {
     }; // class sim_config_t
 
 
-    bool ceph_argparse_witharg(std::vector<const char*> &args,
+    bool stone_argparse_witharg(std::vector<const char*> &args,
 	std::vector<const char*>::iterator &i, std::string *ret, ...);
-    void ceph_argparse_early_args(std::vector<const char*>& args, std::string *conf_file_list);
+    void stone_argparse_early_args(std::vector<const char*>& args, std::string *conf_file_list);
     int parse_config_file(const std::string &fname, sim_config_t &g_conf);
 
   }; // namespace qos_simulation
